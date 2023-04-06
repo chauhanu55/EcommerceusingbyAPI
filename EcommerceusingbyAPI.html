@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ecommerce Using by API</title>
+</head>
+<body>
+	<!-- <div id="wrapper">
+		<div id="products"></div>
+		
+	</div> -->
+
+
+
+	<div id="products"></div>
+
+
+
+
+
+
+
+
+
+	<script>
+		// fetch("https://dummyjson.com/profucts")
+		fetch("https://randomuser.me/api")
+
+		
+		.then((response) => {return response.json()})
+		.then((result) =>{console.log(result)
+			name(result)
+
+		})
+
+		function name(data){
+			const image = document.createElement("img");
+			image.src=data.results[0].picture.large;
+
+			const name=document.createElement("h1");
+			name.innerHTML=data.results[0].name.first + " " + data.results[0].name.last
+
+			const email = document.createElement("p");
+			email.innerHTML = data.results[0].email
+
+
+
+			document.querySelector("#products").append(image);
+			document.querySelector("#products").append(name);
+			document.querySelector("#products").append(email);		
+			
+		}
+
+	</script>
+</body>
+</html>
